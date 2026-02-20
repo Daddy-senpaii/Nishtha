@@ -1,0 +1,23 @@
+[
+ {
+  "id": 884,
+  "task_info": "chanting mantra",
+  "isCompleted": false,
+  "createdAt": "2026-02-19T19:36:19.717942124+05:30",
+  "finishedAt": "0001-01-01T00:00:00Z"
+ },
+ {
+  "id": 364,
+  "task_info": "coding",
+  "isCompleted": false,
+  "createdAt": "2026-02-19T19:36:22.798399989+05:30",
+  "finishedAt": "0001-01-01T00:00:00Z"
+ },
+ {
+  "id": 883,
+  "task_info": "app",
+  "isCompleted": false,
+  "createdAt": "2026-02-19T19:36:27.710506745+05:30",
+  "finishedAt": "0001-01-01T00:00:00Z"
+ }
+]

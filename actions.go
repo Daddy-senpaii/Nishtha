@@ -25,9 +25,13 @@ func command_handler(command string) (bool, error) {
 
 func Actions(){
   reader := bufio.NewReader(os.Stdin)
+
   fmt.Println("Following things you can do in this....")
+
   fmt.Printf("1: Add Task using %s \n 2: Remove Task using %s \n 3: Update Task %s \n 4: Get All Task %s \n 5: Get Specific Task %s \n", "add", "delete", "update", "get_all", "get_specific" )
+
   fmt.Println("=====================================================================")
+
   fmt.Println("Enter command: ")
   input, _ := reader.ReadString('\n')
   input = strings.TrimSpace(input)
