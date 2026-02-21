@@ -8,6 +8,26 @@ import (
   "io"
 )
 
+func file_data()([]Tasks, error){
+
+  fileData, err := os.OpenFile("all_task.json", os.O_RDONLY, 0644)
+  if err != nil {
+    return nil, err
+  }
+
+  defer fileData.Close()
+
+  data, err := io.ReadAll(fileData)
+
+  if err != nil {
+    return nil, err
+  }
+
+//  fmt.Printf("%v, %T", data, (data))
+  all_current_data := json_to_struct(data)
+  return all_current_data, nil
+}
+
 func receives_allTask(all_tasks []Tasks) {
     if _, err := os.Stat("all_task.json"); err == nil {
       fileData , err := os.OpenFile("all_task.json", os.O_RDWR, 0644)

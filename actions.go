@@ -69,6 +69,19 @@ func Actions(){
       fmt.Println("updating task")
     case "delete":
       fmt.Println("removing task")
+      fmt.Println("Enter id of task: ")
+      reader := bufio.NewReader(os.Stdin)
+      input, _ := reader.ReadString('\n')
+      input = strings.TrimSpace(input)
+
+      task_id , err := strconv.Atoi(input)
+
+      if err != nil {
+        fmt.Println("Invalid id")
+      }
+
+      Delete_Task(task_id)
+
     case "get_all":
       fmt.Println("getting all task")
     case "get_specific":

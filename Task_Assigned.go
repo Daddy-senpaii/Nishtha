@@ -5,7 +5,7 @@ import (
   "time"
   "bufio"
   "os"
-  "math/rand"
+  //"math/rand"
   "strings"
   //"encoding/json"
 
@@ -27,21 +27,26 @@ func Input_Task () Tasks{
   input = strings.TrimSpace(input)
 
   // random seed
-  rand.Seed(time.Now().UnixNano())
-  task_id :=  rand.Intn(1000) + 1
+  //rand.Seed(time.Now().UnixNano())
+  //task_id :=  rand.Intn(1000) + 1
+  //task_id := handle_id()
 
-  return Tasks{
-    Id: task_id,
+  tasks := Tasks{
+    Id: NextID,
     Task_Info: input,
     IsCompleted: false,
     CreatedAt: time.Now(),
     FinishedAt: time.Time{}, 
   }
+  NextID++
+  return tasks
+//  task_id += 1
 
 }
 
 func Assigned_Task(no_of_task int) {
   var all_task []Tasks
+  handle_id()
 
   for i:= 0; i<no_of_task ;i++ {
     current_tasks := Input_Task()
@@ -49,20 +54,4 @@ func Assigned_Task(no_of_task int) {
   }
 
   receives_allTask(all_task)
-  //fmt.Println("all tasks are", all_task)
-  // Issue to solve : if file exist add data don't overwrite with new ones
-  // if not make one file add
- // data, err := json.MarshalIndent(all_task, "", " ")
-  //if err != nil {
-    //log.Fatal(err)
-  //}
- // fmt.Println(string(data))
-
-  //err = os.WriteFile("all_task.json", data, 0644)
-
-  //if err != nil {
-    //log.Fatal(err)
-  //}
-  //fmt.Println("File is written successfully boy")
-
 }
