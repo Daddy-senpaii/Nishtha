@@ -7,13 +7,6 @@
   "finishedAt": "0001-01-01T00:00:00Z"
  },
  {
-  "id": 2,
-  "task_info": "watching naruto",
-  "isCompleted": false,
-  "createdAt": "2026-02-21T09:03:04.3524429+05:30",
-  "finishedAt": "0001-01-01T00:00:00Z"
- },
- {
   "id": 3,
   "task_info": "buri buri zaimon",
   "isCompleted": false,

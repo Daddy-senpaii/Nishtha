@@ -28,6 +28,13 @@ func file_data()([]Tasks, error){
   return all_current_data, nil
 }
 
+func write_file(tasks []byte) {
+  err := os.WriteFile("all_task.json", tasks, 0644)
+  if err != nil {
+    log.Fatal(err)
+  }
+  fmt.Println("file is update successfully boy")
+}
 func receives_allTask(all_tasks []Tasks) {
     if _, err := os.Stat("all_task.json"); err == nil {
       fileData , err := os.OpenFile("all_task.json", os.O_RDWR, 0644)
