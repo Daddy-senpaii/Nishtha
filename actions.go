@@ -83,9 +83,37 @@ func Actions(){
       Delete_Task(task_id)
 
     case "get_all":
-      fmt.Println("getting all task")
+      all_tasks, err := file_data()
+      if err != nil {
+        fmt.Println("Having error man")
+      }
+      for _ , task := range all_tasks{
+        fmt.Printf("\n")
+        fmt.Println(task)
+        fmt.Println("============================================")
+      }
+      
     case "get_specific":
-      fmt.Println("getting specific task")
+      reader := bufio.NewReader(os.Stdin)
+      fmt.Println("Please enter task id: you want to know")
+      input, _ := reader.ReadString('\n')
+      input = strings.TrimSpace(input)
+
+      task_id, err := strconv.Atoi(input)
+      if err != nil {
+        fmt.Println(err)
+      }
+      all_tasks, err := file_data()
+      if err != nil {
+        fmt.Println(err)
+      }
+
+      for _, task := range all_tasks{
+        if task.Id == task_id {
+          fmt.Println(task)
+        }
+      }
+      }
 
 }
-}
+//}
