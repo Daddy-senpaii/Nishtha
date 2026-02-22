@@ -109,8 +109,6 @@ func Actions(){
       }
 
       task_index := get_task_location(all_tasks, task_id)
-      //fmt.Println(task_index)
-
       fmt.Println(all_tasks[task_index])
 
       }
