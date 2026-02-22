@@ -108,11 +108,11 @@ func Actions(){
         fmt.Println(err)
       }
 
-      for _, task := range all_tasks{
-        if task.Id == task_id {
-          fmt.Println(task)
-        }
-      }
+      task_index := get_task_location(all_tasks, task_id)
+      //fmt.Println(task_index)
+
+      fmt.Println(all_tasks[task_index])
+
       }
 
 }
