@@ -15,6 +15,7 @@ func command_handler(command string) (bool, error) {
     "update":true,
     "get_all":true,
     "get_specific": true,
+    "complete": true,
   }
 
   if _ , ok := command_look[command]; ok {
@@ -28,7 +29,7 @@ func Actions(){
 
   fmt.Println("Following things you can do in this....")
 
-  fmt.Printf("1: Add Task using %s \n 2: Remove Task using %s \n 3: Update Task %s \n 4: Get All Task %s \n 5: Get Specific Task %s \n", "add", "delete", "update", "get_all", "get_specific" )
+  fmt.Printf("1: Add Task using %s \n 2: Remove Task using %s \n 3: Update Task using %s \n 4: Get All Task using %s \n 5: Get Specific Task using %s \n 6: Complete Task using %s \n", "add", "delete", "update", "get_all", "get_specific", "complete" )
 
   fmt.Println("=====================================================================")
 
@@ -113,7 +114,26 @@ func Actions(){
           fmt.Println(task)
         }
       }
+    case "complete":
+      reader := bufio.NewReader(os.Stdin)
+      fmt.Println("Please enter task id: ")
+      input, _ := reader.ReadString('\n')
+      input = strings.TrimSpace(input)
+      parts := strings.Fields(input)
+      
+      var taskIDs []int
+
+      //task_id, err := strconv.Atoi(input)
+      for _, value := range parts{
+        id, err := strconv.Atoi(value)
+        if err != nil {
+          fmt.Println("Invalid number: ", value)
+          break
+        }
+        taskIDs = append(taskIDs, id)
+      }
+      handle_Complete(taskIDs)
       }
 
-}
-//}
+    }
+  

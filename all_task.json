@@ -2,23 +2,23 @@
  {
   "id": 1,
   "task_info": "watching shinchan",
-  "isCompleted": false,
+  "isCompleted": true,
   "createdAt": "2026-02-21T09:02:59.776203474+05:30",
-  "finishedAt": "0001-01-01T00:00:00Z"
+  "finishedAt": "2026-02-26T08:03:13.464374903+05:30"
  },
  {
   "id": 3,
   "task_info": "buri buri zaimon",
-  "isCompleted": false,
+  "isCompleted": true,
   "createdAt": "2026-02-21T09:03:37.577728812+05:30",
-  "finishedAt": "0001-01-01T00:00:00Z"
+  "finishedAt": "2026-02-26T09:00:04.897541641+05:30"
  },
  {
   "id": 4,
   "task_info": "one piece",
-  "isCompleted": false,
+  "isCompleted": true,
   "createdAt": "2026-02-21T09:03:42.633854687+05:30",
-  "finishedAt": "0001-01-01T00:00:00Z"
+  "finishedAt": "2026-02-26T09:00:04.897541751+05:30"
  },
  {
   "id": 5,
