@@ -32,5 +32,5 @@ It helps manage and schedule tasks directly from the terminal while demonstratin
 ```bash
 git clone https://github.com/<your-username>/What_I_have_done.git
 ```
-### 2. cd What_I_have_done
-### 3. go run.
+### 2. cd Nishtha
+### 3. And run ./Nishtha or go run .
