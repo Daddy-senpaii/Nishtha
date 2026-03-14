@@ -1,7 +1,7 @@
 package main
 import (
   "fmt"
-  "os"
+
 )
 
 func main(){
@@ -13,21 +13,13 @@ func main(){
   fmt.Println("===============================================================")
   fmt.Println("\n")
 
-  fmt.Println("Enter day for the tasks. It could be Today, Tomorrow, Other")
-  
-  var days map[string]bool = map[string]bool{
-    "Today": true, 
-    "Tomorrow": true, 
-    "Other": true,
-  }
+  todos := Todos{}
+  storage := NewStorage[Todos]("todo.json")
+  storage.Load(&todos)
 
-  var input string = os.Args[1]
-  if !days[input] {
-    fmt.Println("Be Specific man. Today, Tomorrow, Other(you will provide date here)")
-    os.Exit(1)
-  }
-  // provide tthis handle switches boy
-  fmt.Println(days[input])
-  taskHandlers(input)
+  cmdFlags := NewCmdFlags()
+  flag.Parse()
+  cmdFlags.Execute(&todos)
+  storage.SaveData(todos)
 
  }
